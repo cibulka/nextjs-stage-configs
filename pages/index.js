@@ -80,11 +80,9 @@ Home.getInitialProps = async (ctx) => {
     await fetch(props.config.API_URL)
         .then(res => res.json())
         .then(json => {
-            console.log('M??', json);
             props.image = json.file || json.url || json.image;
         })
         .catch(err => {
-            console.log('err?', json);
             props.err = err;
         })
     ;
